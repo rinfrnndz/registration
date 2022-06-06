@@ -1,2 +1,2 @@
 # registration
-new registration
+ clone for registration
