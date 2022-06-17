@@ -24,6 +24,8 @@ body {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -39,6 +41,8 @@ img {
 .container {
   padding: 50px;
   background-color: white;
+  width: 80%;
+  position: center;
 }
 
 /* Full-width input fields */
@@ -99,6 +103,7 @@ hr {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-size: 14px;
 }
 
 .registerbtn:hover {
@@ -115,11 +120,26 @@ a {
   background-color: #fff;
   text-align: center;
 }
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 9%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
 </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-default" style="font-family: calibri; letter-spacing: 1.1px; font-weight: bold;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -173,7 +193,13 @@ a {
     
   </div>
     
-</form>
+  </form>
 
+  <div class="footer">
+  <label style="position: left; font-weight: normal; font-family: calibri; ">
+    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    </label>
+</div>
 </body>
 </html>

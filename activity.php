@@ -27,11 +27,15 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  /*background-color: white;*/
   background-image: url("iag.jpg");
   height: 1000px; /* You must set a specified height */
+  min-height: 100vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -42,6 +46,9 @@ body {
 .container {
   padding: 50px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 /* Full-width input fields */
@@ -119,6 +126,21 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #F5FFFA;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 10%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
 </style>
 <script type="text/javasript" src="jquery-3.6.0.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -127,7 +149,7 @@ a {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-default" style="font-family: calibri; letter-spacing: 1.1px; font-weight: bold;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -150,37 +172,46 @@ a {
         </div>
     </nav>
 
-<form action="" method="POST">
-  <div class="container">
+<div class="container">
+  <form action="" method="POST">
+    
     <h1>Adding Activity Title</h1>
     <p>Please fill in this form to add activity title and date.</p>
     <hr>
 
     <label for="pcode"><b>Project Code</b></label>
-    <select name=pcodes>
-      <option disabled='disabled' selected='selected'>--Select Project Code--</option>
+      <select name="pcodes" required>
+        <option disabled='disabled' selected='selected'>--Select Project Code--</option>
         <?php $activitytable = mysqli_query($connect, "select * from projectcode");
-            while ($row=mysqli_fetch_array($activitytable)) {
+          while ($row=mysqli_fetch_array($activitytable)) {
         ?>
-            <option value="<?php echo $row['projects_id'];?>"><?php echo $row['project_code'];?></option>
+          <option value="<?php echo $row['projects_id'];?>"><?php echo $row['project_code'];?></option>
         <?php 
-            }
+          }
         ?>
-    </select>
+      </select>
     <br/><br/>
     <label for="title"><b>Activity Title</b></label>
     <input type="text" placeholder="Enter your Activity Title" name="title" id="title" required>
 
     <label for="actdate"><b>Activity Date</b></label>
     <input type="date" placeholder="Enter Activity Date" name="actdate" id="actdate" required>
-    
+      
     <hr>
-    
+      
     <button type="submit" name="submit" class="registerbtn">Add Title</button>
     <button type="reset" name="reset" class="clearbtn">Cancel</button>
-  </div>
+  </form>
+</div>
     
-</form>
 
+
+<!-- Footer -->
+<div class="footer">
+  <label style="position: left; font-weight: normal; font-family: calibri; ">
+    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    </label>
+</div><!-- Footer -->
 </body>
 </html>

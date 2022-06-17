@@ -15,11 +15,15 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  /*background-color: white;*/
   background-image: url("iag.jpg");
   height: 1000px; /* You must set a specified height */
+  min-height: 100vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -107,6 +111,20 @@ a {
   text-align: center;
 }
 
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #F5FFFA;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 10%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
 </style>
 <script type="text/javasript" src="jquery-3.6.0.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -116,7 +134,7 @@ a {
 </head>
 <body>
 
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-default" style="font-family: calibri; letter-spacing: 1.1px; font-weight: bold;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -126,14 +144,14 @@ a {
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
-    <ul class="nav navbar-nav" >
-      <li class="active"><a href="account.php">IAG</a></li>
-      <li><a href="activity.php">Add Activity</a></li>
-      <li><a href="evaluation-report.php">Evaluation Report</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-    </ul>
+      <ul class="nav navbar-nav" >
+        <li class="active"><a href="account.php">Back to main</a></li>
+        <li><a href="activity.php">Add Activity</a></li>
+        <li><a href="evaluation-report.php">Evaluation Report</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -169,6 +187,7 @@ a {
   </select>
 </form>
 <div id="evaluation_data"><b>Participant's Feedback will be displayed here....</b></div>
-  
+
 </body>
+
 </html>

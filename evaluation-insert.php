@@ -33,7 +33,7 @@
     $ques15 = $_POST['ques15'];
 
     $sqlforeval = "INSERT INTO `evaluation`(`acty_id`, `first_name`, `last_name`, `birthday`, `age_range`, `gender`, `ethnicity`, `ct_municipality`, `provnce`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`, `q11`, `q12`, `q13`, `q14`, `q15`) 
-                  VALUES ('$actvtytitle','$firstname','$lastname','$dob','$agerange','$sgender,'$ethncty','$ctm','$province','$ques1','$ques2','$ques3','$ques4','$ques5','$ques6','$ques7','$ques8','$ques9','$ques10','$ques11','$ques12','$ques13','$ques14','$ques15' )";
+                  VALUES ('$actvtytitle','$firstname','$lastname','$dob','$agerange','$sgender','$ethncty','$ctm','$province','$ques1','$ques2','$ques3','$ques4','$ques5','$ques6','$ques7','$ques8','$ques9','$ques10','$ques11','$ques12','$ques13','$ques14','$ques15' )";
     $qryforeval = mysqli_query($connect, $sqlforeval);
 
   if($qryforeval) {

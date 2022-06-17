@@ -1,5 +1,5 @@
 <?php include 'server.php';
-    //error_reporting(0);
+    error_reporting(0);
     //session_start();
    
   if(isset($_POST['submit'])) {
@@ -33,14 +33,14 @@
         
       $insertforeval = 'INSERT INTO `evaluation` (`acty_id`, `first_name`, `last_name`, `birthday`, `age_range`, `gender`, `ethnicity`, `ct_municipality`, `provnce`, `q1`, `q2`, `q3`, `q4`, `q5`, `q6`, `q7`, `q8`, `q9`, `q10`, `q11`, `q12`, `q13`, `q14`, `q15`) 
         VALUES ("'.$actvtytitle.'","'.$firstname.'","'.$lastname.'","'.$dob.'","'.$agerange.'","'.$sgender.'","'.$ethncty.'","'.$ctm.'","'.$province.'","'.$ques1.'","'.$ques2.'","'.$ques3.'","'.$ques4.'","'.$ques5.'","'.$ques6.'","'.$ques7.'","'.$ques8.'","'.$ques9.'","'.$ques10.'","'.$ques11.'","'.$ques12.'","'.$ques13.'","'.$ques14.'","'.$ques15.'")';
-    $qryforeval = mysqli_query($connect, $insertforeval);
-    //echo "$qryforeval";
-    if($qryforeval) {
-      echo "<div class='alert alert-warning' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Thank you</strong>&nbsp;for your honest feedback.</div>";
-      } else {
-        echo "<div class='alert alert-danger' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Warning!</strong>&nbsp;Something went wrong.</div>";
-      }
-  }
+      $qryforeval = mysqli_query($connect, $insertforeval);
+      //echo "$qryforeval";
+      if($qryforeval) {
+        echo "<div class='alert alert-warning' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Thank you</strong>&nbsp;for your honest feedback.</div>";
+        } else {
+          echo "<div class='alert alert-danger' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Warning!</strong>&nbsp;Something went wrong.</div>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +79,7 @@ img {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
 }
 
 /* Full-width input fields */
@@ -204,10 +205,25 @@ th {
     left: 0;
     color: #FFD700;
 }
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 9%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
 </style>
 </head>
 <body>
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-default" style="font-family: calibri; letter-spacing: 1.1px; font-weight: bold;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -292,9 +308,10 @@ th {
     <input type="text" placeholder="Enter your Province" name="province" id="province" required>
     
     <br><br>
+    
     <p style="font-size:16px;text-align:center;">The statements below are answerable by Strongly Disagree (1), Disagree (2), Undecided (3), Agree (4), or Strongly Agree (5).</p>  
     <br/>
-    <table class="table" style="width: 100%; margin-left:auto; margin-right: auto;">
+    <table class="table-responsive" style="min-width: 230px; margin-left:auto; margin-right: auto; background-color:white;">
     <tr style="text-align:left;font-size:15px;color:orange;"><td><b>Activity Proper</td></tr>
         <tr>
             <th>Questions</th>
@@ -362,7 +379,7 @@ th {
 
   <!--<p><center>The statements below are answerable by Strongly Disagree (1), Disagree (2), Undecided (3), Agree (4), or Strongly Agree (5).</center></p>-->
     <br/>
-    <table class="table" style="width: 100%; margin-left:auto; margin-right: auto;">
+    <table class="table-responsive" style="min-width: 230px; margin-left:auto; margin-right: auto; background-color:white;">
     <tr style="text-align:left;font-size:15px;color:orange;"><td><b>Sustainability</td></tr>
         <tr>
             <th>Questions</th>
@@ -424,7 +441,7 @@ th {
             <label for="star5">☆</label>
             <div class="clear"></div>
         </div><br>
-<hr>
+    <hr>
     <label style="text-align:left;font-size:15px;color:orange;">Other comments (Please type your answers below.)</label><br/><br/>
         <p style="text-align:left;font-weight: normal;">12. Which topics or aspects of the seminar/activity did you find most interesting or useful?</p>
         <input type="text"  name="ques12" id="ques12" />
@@ -434,7 +451,7 @@ th {
         <input type="text"  name="ques14" id="ques14" />
         <br/>
 
-    <table class="table" style="width: 100%; margin-left:auto; margin-right: auto;">
+    <table class="table-responsive" style="min-width: 230px; margin-left:auto; margin-right: auto; background-color:white;">
         <tr>
             <td></td>
             <th>Not familiar at all</th>
@@ -453,9 +470,15 @@ th {
    
     <br>
     <button type="submit" name="submit" class="registerbtn" id="myRadio">Submit</button>
-    
     <button type="reset" name="reset" class="clearbtn">Cancel</button>
   </form>
-  </div>
+</div>
+
+<div class="footer">
+  <label style="position: left; font-weight: normal; font-family: calibri; font-size:13px;">
+    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    </label>
+</div>  
 </body>
 </html>

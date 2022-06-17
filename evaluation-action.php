@@ -17,11 +17,15 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  /*background-color: white;*/
   background-image: url("iag.jpg");
   height: 1000px; /* You must set a specified height */
+  min-height: 100vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -109,6 +113,20 @@ a {
   text-align: center;
 }
 
+.footer {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #F5FFFA;
+        color: #2f2f2f;
+        opacity: 0.9;
+        text-align: left;
+        height: 10%;
+        padding: 25px;
+        margin-top: auto;
+        font-size: 13px;
+    }
 </style>
 <script type="text/javasript" src="jquery-3.6.0.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -205,6 +223,7 @@ a {
     </tfoot>
         
 </table>
-  
+
+
 </body>
 </html>

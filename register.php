@@ -66,6 +66,7 @@ img {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
 }
 
 /* Full-width input fields */
@@ -96,6 +97,8 @@ input[type=text]:focus, input[type=date]:focus {
   background-color: #ddd;
   outline: none;
 }
+
+
 /* Overwrite default styles of hr */
 hr {
   border: 1px solid #f1f1f1;
@@ -104,7 +107,8 @@ hr {
 
 /* Set a style for the submit button */
 .registerbtn {
-  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+  /*background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);*/
+  background-color: #C08081;
   font-size: 15px;
   color: white;
   padding: 16px 20px;
@@ -117,6 +121,10 @@ hr {
 
 .registerbtn:hover {
   opacity: 1;
+}
+
+.registerbtn:disabled {
+  background-color: gray;
 }
 
 .clearbtn {
@@ -151,10 +159,26 @@ p {
   font-size: 14px;
   text-align: center;
 }
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 9%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
+
 </style>
 </head>
 <body>
-<nav class="navbar navbar-default" >
+<nav class="navbar navbar-default" style="font-family: calibri; letter-spacing: 1.1px; font-weight: bold;">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -277,7 +301,7 @@ p {
     <div style="width: 90%; margin-left:auto; margin-right:auto;">
       <p style="text-align:justify;  ">Thank you for participating in this event. By filling-up this form, you consent IAG to collect and process your personal information. The information collected by the Institute for Autonomy and Governance (IAG) is stored and processed for internal and donor monitoring purposes. We take our responsibilities for protecting your data very seriously. Details of how your personal information is processed, is in accordance with the requirements of the Data Privacy Act of 2012.</p>
       <p style="text-align:justify;">Further, you also consent IAG full rights to use the images resulting from the photography/video filming, and any reproductions, or adaptations of the images for publicity, or other purposes to help achieve the organization’s aims. This might include (but is not limited to), the right to use them in their printed and online publicity, social media, press releases and funding applications.</p>
-      <input type="radio" name="agree" onclick="disable()">&nbsp;<b>I agree</b>
+      <input type="radio" name="agree" onclick="disable()" style="">&nbsp;<b>I agree</b>
     </div>
     <br>
     <button type="submit" name="submit" class="registerbtn" id="myRadio" disabled>Register</button>
@@ -291,5 +315,11 @@ p {
     
 </form>
 
+<div class="footer">
+  <label style="position: left; font-weight: normal; font-family: calibri; font-size:13px;">
+    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    </label>
+</div>
 </body>
 </html>

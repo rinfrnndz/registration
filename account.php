@@ -20,11 +20,15 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  /*background-color: white;*/
   background-image: url("iag.jpg");
   height: 1000px; /* You must set a specified height */
+  min-height: 100vh;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -111,6 +115,21 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #2f2f2f;
+  opacity: 0.9;
+  text-align: left;
+  height: 9%;
+  padding: 25px;
+  margin-top: auto;
+  font-size: 13px;
+}
 </style>
   <script type="text/javasript" src="jquery-3.6.0.js"></script>
   <meta charset="utf-8">
@@ -177,7 +196,13 @@ a {
         ?>
     </table><br/>
   
-  </div>
-  
+  </div><br>
+
+<div class="footer">
+  <label style="position: left; font-weight: normal; font-family: calibri; font-size:13px;">
+    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    </label>
+</div>
 </body>
 </html>
