@@ -43,71 +43,14 @@ body {
   padding-right: 60px;
   padding: 50px;
   width: 90%;
+  box-shadow: 5px 10px 20px grey;
+  border-radius: 12px;
 }
 
-
-/* Full-width input fields */
-input[type=text], input[type=email] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=email]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-input[type=text], input[type=date] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=date]:focus {
-  background-color: #ddd;
-  outline: none;
-}
 /* Overwrite default styles of hr */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
 }
 
 /* Add a blue text color to links */
@@ -115,17 +58,27 @@ a {
   color: dodgerblue;
 }
 
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
+.r {
+  display: flex; 
+  display: inherit; 
+  overflow-x:auto;
+  width: 100%;
+  font-family: Calibri;
+  background-color: white;
+}
+.r th, .r td {
+  padding:7px 10px;
+  border: 0.7px solid #F0F0F0;
+}
+.r th {
+  font-size: 13px;
+  font-family: Calibri;
+  background-color: #A8bdbc;
+  
 }
 
-th {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 12px;
-    font-family: Verdana;
+.r td {
+  font-size: 13px;
 }
 
 .footer {
@@ -142,6 +95,97 @@ th {
   margin-top: auto;
   font-size: 13px;
 }
+
+.counts {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10px;
+}
+
+.counts th {
+  background-color: #567572FF;
+  color: white; /* #F5F5F5 */
+}
+
+.counts td, .counts th {
+  padding:7px 10px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+ @media (max-width: 500px;) {
+  .counts tr {
+    display: none;
+    
+  }
+  .counts, .counts tr, .counts td {
+    display: block;
+    width: 100%;
+     
+  }
+  .counts tr {
+    margin-bottom: 15px;
+  }
+  .counts td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .counts td::before {
+    content: after(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 15px;
+    font-size: 11px;
+    text-align: left;
+  }
+}
+
+.mytabs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: white; /* #F5F5F5 */
+  
+}
+
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+.mytabs label {
+  padding: 10px;
+  background-color: whtie;
+  font-weight: semibold;
+  font-size: 12px;
+  
+}
+
+.mytabs .tab {
+  width: 100%;
+  padding: 15px;
+  background-color: #F5F5F5;
+  order: 1;
+  display: none;
+}
+
+.tab {
+  margin-top: -5px;
+    
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+  display: block;
+}
+
+.mytabs input[type='radio']:checked + label {
+  background-color: #F5F5F5;
+}
+
 </style>
 <script type="text/javasript" src="jquery-3.6.0.js"></script>
 <meta charset="utf-8">
@@ -162,7 +206,7 @@ th {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav" >
-        <li class="active"><a href="account.php">Back to main</a></li>
+        <li class="active"><a href="account.php" style="border-radius: 50%; font-size:22px;">&laquo;</a></li>
         <li><a href="activity.php">Add Activity</a></li>
         <li><a href="evaluation-report.php">Evaluation Report</a></li>
       </ul>
@@ -176,91 +220,100 @@ th {
 <div class="container">
   <!--<br/><a href="account.php" class="btn btn-danger">Back</a>-->
   <h3><center>Participants' Information</center></h3>
-  <hr><br/>
-  <button onclick="window.print()" class="btn btn-default">Print this page</button><br>
-  
-  <div class="table-responsive" style="font-family:calibri; min-width:280px; padding:20px; background-color:white;">
-    <table class="table table-condensed table-fixed" >
-      <thead>
-        <tr>
-          <th scope="row" style="text-align:center;">#</th>
-          <th scope="row" colspan="2" style="text-align:center;">Full Name</th>
-          <th scope="row" style="text-align:center;">Date of Birth</th>
-          <th scope="row" style="text-align:center;">Age Range</th>
-          <th scope="row" style="text-align:center;">Gender</th>
-          <th scope="row" style="text-align:center;">Ethnicity</th>
-          <th scope="row" style="text-align:center;">City/ Municipality</th>
-          <th scope="row" style="text-align:center;">Province</th>
-          <th scope="row" style="text-align:center;">Mobile Number</th>
-          <th scope="row" style="text-align:center;">Email Address</th>
-          <th scope="row" colspan="2" style="text-align:center;">Education</th>
-          <th scope="row" style="text-align:center;">Organization/ Office</th>
-          <th scope="row" style="text-align:center;">Position</th>
-          <th scope="row" style="text-align:center;">Organization/ Office No.</th>
-          <th scope="row" style="text-align:center;">Organization's Email</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php
-          $no = 1;
-          while ($participants = mysqli_fetch_array($qrytoshowparticipants)) {
-            
-        ?>
-          <tr>
-            <td scope="row"><?php echo $no;?></td>
-            <td><?php echo ucfirst($participants['firstname']);?></td>
-            <td><?php echo ucfirst($participants['lastname']);?></td>
-            <td><?php echo $participants['birthdate'];?></td>
-            <td><?php echo $participants['agerange'];?></td>
-            <td><?php echo $participants['gender'];?></td>
-            <td><?php echo ucfirst($participants['ethnicity']);?></td>
-            <td><?php echo ucfirst($participants['city_municipality']);?></td>
-            <td><?php echo ucfirst($participants['province']);?></td>
-            <td><?php echo $participants['mobileno'];?></td>
-            <td><?php echo $participants['email'];?></td>
-            <td><?php echo ucfirst($participants['education']);?></td>
-            <td><?php echo ucfirst($participants['othereduc']);?></td>
-            <td><?php echo ucfirst($participants['org_office']);?></td>
-            <td><?php echo ucfirst($participants['position']);?></td>
-            <td><?php echo $participants['org_no'];?></td>
-            <td><?php echo $participants['org_email'];?></td>
-          </tr>
-        <?php
-            $no++;
-          }
-        ?>
-      </tbody>
-    </table>
-  </div> <br><!-- 1st div> -->
-    
-  <div style="padding:10px;">
-    <div class="col-md-4" style="background-color:white; width:100%; margin-left:auto;margin-right:auto;border: 1px gray; border-width: thin; padding:10px 10px; box-shadow: 5px 10px 20px grey; opacity:0.8; border-radius:15px;">
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto; margin-top:25px;">
+   
+  <div class="mytabs">
+    <input type="radio" id="tabparticipants" name="mytabs" checked="checked">
+    <label for="tabparticipants">Participants</label>
+    <div class="tab">
+      <h3>Registered Participants</h3><br>
+        <table class="r">
+          <thead>
+            <tr>
+              <th scope="row" style="text-align:center;">#</th>
+              <th scope="row" colspan="2" style="text-align:center;">Full Name</th>
+              <th scope="row" style="text-align:center;">Date of Birth</th>
+              <th scope="row" style="text-align:center;">Age Range</th>
+              <th scope="row" style="text-align:center;">Gender</th>
+              <th scope="row" style="text-align:center;">Ethnicity</th>
+              <th scope="row" style="text-align:center;">City/ Municipality</th>
+              <th scope="row" style="text-align:center;">Province</th>
+              <th scope="row" style="text-align:center;">Mobile Number</th>
+              <th scope="row" style="text-align:center;">Email Address</th>
+              <th scope="row" colspan="2" style="text-align:center;">Education</th>
+              <th scope="row" style="text-align:center;">Organization/ Office</th>
+              <th scope="row" style="text-align:center;">Position</th>
+              <th scope="row" style="text-align:center;">Organization/ Office No.</th>
+              <th scope="row" style="text-align:center;">Organization's Email</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php
+              $no = 1;
+              while ($participants = mysqli_fetch_array($qrytoshowparticipants)) {
+                
+            ?>
+              <tr>
+                <td scope="row"><?php echo $no;?></td>
+                <td><?php echo ucfirst($participants['firstname']);?></td>
+                <td><?php echo ucfirst($participants['lastname']);?></td>
+                <td><?php echo $participants['birthdate'];?></td>
+                <td><?php echo $participants['agerange'];?></td>
+                <td><?php echo $participants['gender'];?></td>
+                <td><?php echo ucfirst($participants['ethnicity']);?></td>
+                <td><?php echo ucfirst($participants['city_municipality']);?></td>
+                <td><?php echo ucfirst($participants['province']);?></td>
+                <td><?php echo $participants['mobileno'];?></td>
+                <td><?php echo $participants['email'];?></td>
+                <td><?php echo ucfirst($participants['education']);?></td>
+                <td><?php echo ucfirst($participants['othereduc']);?></td>
+                <td><?php echo ucfirst($participants['org_office']);?></td>
+                <td><?php echo ucfirst($participants['position']);?></td>
+                <td><?php echo $participants['org_no'];?></td>
+                <td><?php echo $participants['org_email'];?></td>
+              </tr>
+            <?php
+                $no++;
+              }
+            ?>
+          </tbody>
+      </table>
+    </div><!-- div for tab-->
+
+    <input type="radio" id="tabsummary" name="mytabs">
+    <label for="tabsummary">Summary</label>
+    <div class="tab">
+      <h3>Summary Report</h3><hr>
+
+      <table class="counts">
         <!-- PARTICIPANTS COUNT -->
         <?php //For total number of Participants for selected Activity
           $participants_count = "SELECT COUNT(*) AS Total FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY acty.id ";
           $sqlforcategory = mysqli_query($connect, $participants_count);
           $row_count = mysqli_fetch_array($sqlforcategory);
         ?>
-        <tr><td><label for="">Total Number of Participants:</label>&nbsp;&nbsp;<label for=""><?php echo $row_count['Total'];?></label></td></tr>
+        <tr><td style="letter-spacing: 1px;"><b>Total Number of Participants:</label>&nbsp;&nbsp;<?php echo $row_count['Total'];?></td></tr>
       </table>
       
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto;">
+      <table class="counts">
         <!-- GENDER COUNT -->
         <?php //For total number of Male and Female for selected Activity
           $gender_count = "SELECT COUNT(CASE WHEN gender='Male' THEN 1 END) AS 'MALE', COUNT(CASE WHEN gender='Female' THEN 1 END) AS 'FEMALE' FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY acty.id ";
           $sqlforgender = mysqli_query($connect, $gender_count);
           $gender_count = mysqli_fetch_array($sqlforgender);
         ?>
+        <tr><th colspan="2" style="letter-spacing: 1px;">Total Number of Male and Female from Participants</th></tr>
         <tr>
-          <td><label for="">Total Number of Male:</label></td>
-          <td><label for=""><?php echo $gender_count['MALE'];?></label></td>
-          <td><label for="">Total Number of Female:</label></td>
-          <td><label for=""><?php echo $gender_count['FEMALE'];?></label></td>
+          <td><b>Total Number of Male:</td>
+          <td><?php echo $gender_count['MALE'];?></td>
+        </tr>
+        <tr>
+          <td><b>Total Number of Female:</b></td>
+          <td><?php echo $gender_count['FEMALE'];?></td>
         </tr>
       </table>
       
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto;">
+      <table class="counts">
         <?php //For Age Range COUNT
             $agecount = "SELECT 
                             SUM(IF(agerange BETWEEN 15 and 25,1,0)) as '15-25',
@@ -274,67 +327,91 @@ th {
             $sqlforagerange = mysqli_query($connect, $agecount);
             $age_count = mysqli_fetch_array($sqlforagerange);
           ?>
-          <tr><td colspan="6"><label>Age Range</label></td></tr>
+          <tr><th colspan="6" style="letter-spacing: 1px;">Age Range</th></tr>
           <tr>
-            <td><label>(15-25):</label>&nbsp;<label><?php echo $age_count['15-25'];?></label></td>
-            <td><label>(26-35):</label>&nbsp;<label><?php echo $age_count['26-35'];?></label></td>
-            <td><label>(36-45):</label>&nbsp;<label><?php echo $age_count['36-45'];?></label></td>
-            <td><label>(46-55):</label>&nbsp;<label><?php echo $age_count['46-55'];?></label></td>
-            <td><label>(56-65):</label>&nbsp;<label><?php echo $age_count['56-65'];?></label></td>
-            <td><label>(Over 65):</label>&nbsp;<label><?php echo $age_count['Over65'];?></label></td>
-            
+            <td><b>(15-25)</td>
+            <td><?php echo $age_count['15-25'];?></td>
+          </tr>
+          <tr>
+            <td><b>(26-35)</td>
+            <td><?php echo $age_count['26-35'];?></td>
+          </tr>
+          <tr>
+            <td><b>(36-45)</td>
+            <td><?php echo $age_count['36-45'];?></td>
+          </tr>
+          <tr>
+            <td><b>(46-55)</td>
+            <td><?php echo $age_count['46-55'];?></td>
+          </tr>
+          <tr>
+            <td><b>(56-65)</td>
+            <td><?php echo $age_count['56-65'];?></td>
+          </tr>
+          <tr>
+            <td><b>(Over 65)</td>
+            <td><?php echo $age_count['Over65'];?></td>
           </tr>
       </table>
       <!-- //For Ethnicity COUNT -->
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto;">
-        <tr><td colspan="2"><label for="">Ethnicity:</label></td></tr>
+      <table class="counts">
+        <tr><th colspan="2"><b>Ethnicity:</th></tr>
         <?php
-          foreach($connect->query("SELECT ethnicity,COUNT(ethnicity) FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY ethnicity ORDER BY p.id ") as $ethnicity_row) {
+          foreach($connect->query("SELECT DISTINCT ethnicity,COUNT(ethnicity) FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY ethnicity,acty.id ORDER BY p.id ") as $ethnicity_row) {
         ?>
         <tr>
-          <td><label for=""><?php echo $ethnicity_row['ethnicity'];?></label></td>
-          <td><label for=""><?php echo $ethnicity_row['COUNT(ethnicity)'];?></label></td>
+          <td><b><?php echo ucfirst($ethnicity_row['ethnicity']);?></td>
+          <td><?php echo $ethnicity_row['COUNT(ethnicity)'];?></td>
         <?php }?>
           </tr>
       </table>
       <!-- //For City/Municipality COUNT -->
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto;">
-        <tr><td colspan="2"><label for="">City/Municipality:</label></td></tr>
+      <table class="counts">
+        <tr><th colspan="2"><b>City/Municipality:</th></tr>
         <?php 
-          foreach($connect->query("SELECT city_municipality,COUNT(*) FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY city_municipality ORDER BY p.id ") as $ctm_row) {
+          foreach($connect->query("SELECT DISTINCT city_municipality,COUNT(*) FROM projectcode projcode, activities acty, participants p WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' GROUP BY city_municipality,acty.id ORDER BY p.id ") as $ctm_row) {
         ?>
         <tr>
-          <td><label for=""><?php echo $ctm_row['city_municipality'];?></label></td>
-          <td><label for=""><?php echo $ctm_row['COUNT(*)'];?></label></td>
+          <td><b><?php echo ucfirst($ctm_row['city_municipality']);?></td>
+          <td><?php echo $ctm_row['COUNT(*)'];?></td>
         <?php }?>
         </tr>
       </table>
       <!-- //For Province COUNT -->
-      <table class="table table-bordered" style="width:90%;margin-left:auto;margin-right:auto;">
-        <tr><td colspan="2"><label for="">Province:</label></td></tr>
+      <table class="counts">
+        <tr><th colspan="2"><b>Province:</td></th>
         <?php 
-          $province_sql = "SELECT province,COUNT(*) PCOUNT 
+          $province_sql = "SELECT DISTINCT province,COUNT(*) PCOUNT 
                             FROM projectcode projcode, activities acty, participants p 
                             WHERE p.act_id='$actvtyID' AND projcode.projects_id=acty.projects_id AND projcode.project_code='$programadmin' 
-                            GROUP BY acty.id,p.province 
+                            GROUP BY province,acty.id
                             ORDER BY p.id";
           $province_result = $connect->query($province_sql);
           
-            while ($province_rows = mysqli_fetch_array($province_result)) {
+          while ($province_rows = mysqli_fetch_array($province_result)) {
               
         ?>
         <tr>
-          <td><label for=""><?php echo ucfirst($province_rows['province']);?></label></td>
-          <td><label for=""><?php echo $province_rows['PCOUNT'];?></label></td>
+          <td><b><?php echo ucfirst($province_rows['province']);?></td>
+          <td><?php echo $province_rows['PCOUNT'];?></td>
         <?php }
           
         ?>
         </tr>
       </table>
-    </div>
-  </div><!-- div for counts -->
-</div>
+    
+    </div><!-- div for tab-->
 
+    <input type="radio" id="tabchart" name="mytabs">
+    <label for="tabchart">Charts</label>
+    <div class="tab">
+      <h3>Charts</h3><hr>
+    asdfa
+    </div><!-- div for tab-->
+  </div><!-- div for mytabs-->
+  
+</div> <!-- div for container-->
+<br>
 <!-- Footer -->
 <div class="footer">
   <label style="position: left; font-weight: normal; font-family: calibri; ">

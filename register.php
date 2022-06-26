@@ -203,7 +203,7 @@ p {
 
 <form action="" method="POST">
   <div class="container">
-    <h1>Participant's Online Registration Form</h1><br>
+    <h1>Participant's Registration Form</h1><br>
     <p>Please fill in this form to register.</p>
     <hr>
 

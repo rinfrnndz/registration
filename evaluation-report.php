@@ -32,98 +32,22 @@ body {
 
 /* Add padding to containers */
 .container {
-  padding: 50px;
+  padding: 30px;
   background-color: white;
+  box-shadow: 5px 10px 20px grey;
+  border-radius: 12px;
+
 }
 
-/* Full-width input fields */
-input[type=text], input[type=email] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=email]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-input[type=text], input[type=date] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=date]:focus {
-  background-color: #ddd;
-  outline: none;
-}
 /* Overwrite default styles of hr */
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
 
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
+.previous {
   background-color: #f1f1f1;
-  text-align: center;
-}
-
-.footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #F5FFFA;
-  color: #2f2f2f;
-  opacity: 0.9;
-  text-align: left;
-  height: 10%;
-  padding: 25px;
-  margin-top: auto;
-  font-size: 13px;
+  color: black;
 }
 </style>
 <script type="text/javasript" src="jquery-3.6.0.js"></script>
@@ -145,7 +69,7 @@ a {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav" >
-        <li class="active"><a href="account.php">Back to main</a></li>
+        <li class="active"><a href="account.php" style="border-radius: 50%; font-size:22px;">&laquo;</a></li>
         <li><a href="activity.php">Add Activity</a></li>
         <li><a href="evaluation-report.php">Evaluation Report</a></li>
       </ul>
@@ -186,8 +110,8 @@ a {
   <?php } ?>
   </select>
 </form>
-<div id="evaluation_data"><b>Participant's Feedback will be displayed here....</b></div>
+
+<div id="evaluation_data"><b>Feedback Report will be displayed here....</b></div><br>
 
 </body>
-
 </html>

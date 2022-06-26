@@ -309,17 +309,17 @@ th {
     
     <br><br>
     
-    <p style="font-size:16px;text-align:center;">The statements below are answerable by Strongly Disagree (1), Disagree (2), Undecided (3), Agree (4), or Strongly Agree (5).</p>  
+    <p style="font-size:16px;text-align:center;">The statements below are answerable <br> by Strongly Disagree (1), Disagree (2), Undecided (3), Agree (4), or Strongly Agree (5).</p>  
     <br/>
     <table class="table-responsive" style="min-width: 230px; margin-left:auto; margin-right: auto; background-color:white;">
     <tr style="text-align:left;font-size:15px;color:orange;"><td><b>Activity Proper</td></tr>
         <tr>
             <th>Questions</th>
-            <th>Strongly Disagree (1)</th>
+            <th>Strongly Disagree <br> (1)</th>
             <th>Disagree (2)</th>
             <th>Undecided (3)</th>
             <th>Agree (4)</th>
-            <th>Strongly Agree (5)</th>
+            <th>Strongly Agree <br> (5)</th>
         </tr>
         
         <tr>
@@ -378,16 +378,16 @@ th {
     </table>
 
   <!--<p><center>The statements below are answerable by Strongly Disagree (1), Disagree (2), Undecided (3), Agree (4), or Strongly Agree (5).</center></p>-->
-    <br/>
+    <br><br>
     <table class="table-responsive" style="min-width: 230px; margin-left:auto; margin-right: auto; background-color:white;">
     <tr style="text-align:left;font-size:15px;color:orange;"><td><b>Sustainability</td></tr>
         <tr>
             <th>Questions</th>
-            <th>Strongly Disagree (1)</th>
+            <th>Strongly Disagree <br> (1)</th>
             <th>Disagree (2)</th>
             <th>Undecided (3)</th>
             <th>Agree (4)</th>
-            <th>Strongly Agree (5)</th>
+            <th>Strongly Agree <br> (5)</th>
         </tr>
         <tr>
             <td style="width:55%;">7. I will share my learnings from this activity with members of my community.</td>

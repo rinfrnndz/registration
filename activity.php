@@ -44,11 +44,14 @@ body {
 
 /* Add padding to containers */
 .container {
-  padding: 50px;
+  padding: 40px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 70%;
+  box-shadow: 5px 10px 20px grey;
+  border-radius: 12px;
+  
 }
 
 /* Full-width input fields */
@@ -160,7 +163,7 @@ a {
             </div>
             <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav" >
-                <li class="active"><a href="account.php">IAG</a></li>
+                <li class="active"><a href="account.php" style="border-radius: 50%; font-size:22px;">&laquo;</a></li>
                 
                 <li><a href="activity.php">Add Activity</a></li>
                 <li><a href="evaluation-report.php">Evaluation Report</a></li>
