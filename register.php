@@ -1,33 +1,5 @@
 <?php include 'server.php';
-    if(isset($_POST['submit'])) {
-      $acttitle = $_POST['activity_title'];
-      $namef = $_POST['fname'];
-      $namel = $_POST['lname'];
-      $birthday = $_POST['dob'];
-      $age = $_POST['age_range'];
-      $sex = $_POST['sgender'];
-      $ethnici = $_POST['ethnic'];
-      $ct = $_POST['city_municipality'];
-      $prvince = $_POST['prov'];
-      $mobile = $_POST['phoneno'];
-      $emailad = $_POST['eadd'];
-      $attainment = $_POST['educ'];
-      $othereducation = $_POST['othereducation'];
-      $org = $_POST['office'];
-      $postion = $_POST['post'];
-      $orgmobile = $_POST['officeno'];
-      $orgemail = $_POST['office_email'];
-
-      $sql1 = "INSERT INTO participants (act_id, firstname, lastname, birthdate, agerange, gender, ethnicity, city_municipality, province, mobileno, email, education, othereduc, org_office, position, org_no, org_email)
-                  VALUES ('$acttitle','$namef','$namel','$birthday','$age','$sex','$ethnici','$ct','$prvince','$mobile','$emailad','$attainment','$othereducation','$org','$postion','$orgmobile','$orgemail')";
-      $query1 = mysqli_query($connect, $sql1);
-
-      if($query1) {
-        echo "<div class='alert alert-warning' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Thank you!</strong>&nbsp;You are now registered to this activity.</div>";
-      } else {
-        echo "<div class='alert alert-danger' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Warning!</strong>&nbsp;Something went wrong.</div>";
-      }
-  }
+    error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +39,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  border-radius: 15px;
 }
 
 /* Full-width input fields */
@@ -189,9 +162,9 @@ p {
             </div>
             <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav" >
-                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 
-                <li><a href="register.php">Registration Form</a></li>
+                <li class="active"><a href="register.php">Registration Form</a></li>
                 <li><a href="evaluation-form.php">Evaluation Form</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -203,6 +176,37 @@ p {
 
 <form action="" method="POST">
   <div class="container">
+  <?php
+    if(isset($_POST['submit'])) {
+      $acttitle = $_POST['activity_title'];
+      $namef = $_POST['fname'];
+      $namel = $_POST['lname'];
+      $birthday = $_POST['dob'];
+      $age = $_POST['age_range'];
+      $sex = $_POST['sgender'];
+      $ethnici = $_POST['ethnic'];
+      $ct = $_POST['city_municipality'];
+      $prvince = $_POST['prov'];
+      $mobile = $_POST['phoneno'];
+      $emailad = $_POST['eadd'];
+      $attainment = $_POST['educ'];
+      $othereducation = $_POST['othereducation'];
+      $org = $_POST['office'];
+      $postion = $_POST['post'];
+      $orgmobile = $_POST['officeno'];
+      $orgemail = $_POST['office_email'];
+
+      $sql1 = "INSERT INTO participants (act_id, firstname, lastname, birthdate, agerange, gender, ethnicity, city_municipality, province, mobileno, email, education, othereduc, org_office, position, org_no, org_email)
+                  VALUES ('$acttitle','$namef','$namel','$birthday','$age','$sex','$ethnici','$ct','$prvince','$mobile','$emailad','$attainment','$othereducation','$org','$postion','$orgmobile','$orgemail')";
+      $query1 = mysqli_query($connect, $sql1);
+
+      if($query1) {
+        echo "<div class='alert alert-warning' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Thank you!</strong>&nbsp;You are now registered to this activity.</div>";
+      } else {
+        echo "<div class='alert alert-danger' style='width:100%; margin-left:auto; margin-right:auto;'><strong>Warning!</strong>&nbsp;Something went wrong.</div>";
+      }
+    }
+  ?>
     <h1>Participant's Registration Form</h1><br>
     <p>Please fill in this form to register.</p>
     <hr>
@@ -229,7 +233,7 @@ p {
     <input type="text" placeholder="Enter your Last Name" name="lname" id="lname" required>
 
     <label for="dob"><b>Date of Birth</b></label>
-    <input type="date" placeholder="Enter Activity Date" name="dob" id="dob" required>
+    <input type="date" placeholder="Enter Activity Date" name="dob" id="dob" >
       
     <br>
     <label for="age"><b>Age Range</b></label>

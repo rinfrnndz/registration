@@ -26,6 +26,17 @@
         flex-direction: column;
     }
 
+    .container {
+        width: 80%;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+        background: rgba(255,255,255,1);
+        height: 50%;
+        border-radius: 15px;
+        padding: 25px;
+        margin: 12px auto;
+        opacity: 1;
+    }
+
     .footer {
         position: relative;
         left: 0;
@@ -71,10 +82,14 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="js/main.js"></script>
 
+<div class="container" style="background-image: url('online.png'); background-position: center; background-size: auto 600px; background-repeat: no-repeat;">
+
+</div>
+
 <div class="footer">
-  <label style="position: left; font-weight: normal; font-family: calibri; ">
-    <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
-    Notre Dame University, Notre Dame Avenue, Cotabato City<br/>
+    <label style="position: left; font-weight: normal; font-family: calibri; ">
+        <b>&copy; 2022 <a href="https://iag.org.ph/">Institute for Autonomy and Governance</a></b><br/>
+        Notre Dame University, Notre Dame Avenue, Cotabato City<br/>    
     </label>
 </div>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

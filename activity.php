@@ -6,17 +6,7 @@
   $atitle = $_POST['title'];
   $adate = $_POST['actdate'];
 
-  if(isset($_POST['submit'])) {
-    $sqlduplicate = mysqli_query($connect,"SELECT `activity_title`, `activity_date` FROM `activities` WHERE activity_title='$atitle' ");
-      if(mysqli_num_rows($sqlduplicate) > 0 ) {
-        echo "<div class='alert alert-danger' style='width:80%; margin-left:10%; margin-right:10%;'><strong>Warning!</strong>&nbsp;Activity Title already exists.</div>";
-      } else {
-        $insert = "INSERT INTO activities (projects_id, activity_title, activity_date) VALUES ('$pcode', '$atitle','$adate')";
-        $querytitle = mysqli_query($connect, $insert);
-           
-            echo "<div class='alert alert-success' style='width:80%; margin-left:10%; margin-right:10%;'><strong>Warning!</strong>&nbsp;Activity Title added.</div>";
-      }
-  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -163,9 +153,9 @@ a {
             </div>
             <div class="collapse navbar-collapse" id="myNavbar" >
             <ul class="nav navbar-nav" >
-                <li class="active"><a href="account.php" style="border-radius: 50%; font-size:22px;">&laquo;</a></li>
+                <li><a href="account.php" style="border-radius: 50%; font-size:22px;">&laquo;</a></li>
                 
-                <li><a href="activity.php">Add Activity</a></li>
+                <li class="active"><a href="activity.php">Add Activity</a></li>
                 <li><a href="evaluation-report.php">Evaluation Report</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -177,7 +167,19 @@ a {
 
 <div class="container">
   <form action="" method="POST">
-    
+    <?php
+      if(isset($_POST['submit'])) {
+        $sqlduplicate = mysqli_query($connect,"SELECT `activity_title`, `activity_date` FROM `activities` WHERE activity_title='$atitle' ");
+          if(mysqli_num_rows($sqlduplicate) > 0 ) {
+            echo "<div class='alert alert-danger' style='width:80%; margin-left:10%; margin-right:10%;'><strong>Warning!</strong>&nbsp;Activity Title already exists.</div>";
+          } else {
+            $insert = "INSERT INTO activities (projects_id, activity_title, activity_date) VALUES ('$pcode', '$atitle','$adate')";
+            $querytitle = mysqli_query($connect, $insert);
+               
+                echo "<div class='alert alert-success' style='width:90%; margin-left:10%; margin-right:10%;'><strong>Success!</strong>&nbsp;Activity Title added.</div>";
+          }
+      }
+    ?>
     <h1>Adding Activity Title</h1>
     <p>Please fill in this form to add activity title and date.</p>
     <hr>

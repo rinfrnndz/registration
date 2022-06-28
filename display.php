@@ -292,7 +292,7 @@ a {
           $sqlforcategory = mysqli_query($connect, $participants_count);
           $row_count = mysqli_fetch_array($sqlforcategory);
         ?>
-        <tr><td style="letter-spacing: 1px;"><b>Total Number of Participants:</label>&nbsp;&nbsp;<?php echo $row_count['Total'];?></td></tr>
+        <tr><th style="letter-spacing: 1px;"><b>Total Number of Participants:</label>&nbsp;&nbsp;<?php echo $row_count['Total'];?></th></tr>
       </table>
       
       <table class="counts">
@@ -406,7 +406,7 @@ a {
     <label for="tabchart">Charts</label>
     <div class="tab">
       <h3>Charts</h3><hr>
-    asdfa
+            Still on progress.
     </div><!-- div for tab-->
   </div><!-- div for mytabs-->
   
